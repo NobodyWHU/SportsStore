@@ -8,7 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
+    <div id="header">
+        @{Html.RenderAction("Summary", "Cart");}
+        <div class="title">SPORTS STORE</div>
+    </div>
+    <div id="categories">
+         @{ Html.RenderAction("Menu", "Nav"); }
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
